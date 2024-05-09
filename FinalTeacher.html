@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="{{ url_for('static',filename='teacherDetails.css') }}">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>example</title>
+</head>
+
+<body>
+  <div class="container">
+    <button onclick="window.location='http://localhost:5000/dropsession'" type="submit">logout</button>
+    <div class="form-box">
+      <form class="form">
+        <h1 class="title">MBM UNIVERSITY JODHPUR</h1>
+        <h2 class="title">Teacher Details</h2>
+        <!-- <span class="subtitle">Create a free account with your email.</span> -->
+        <div class="details">
+          <label for="techerDetails">Name: {{name}}</label>
+          <label for="techerDetails">Teacher Id: {{id}}</label>
+        </div>
+        <div class="details">
+          <label for="techerDetails">Duty Room:{{room}} ({{dept}})</label>
+          <label for="techerDetails">Date:{{date}} </label>
+        </div>
+       
+      </form>
+    </div>
+    <h2 style="
+          display: flex;
+          text-align: center;
+          justify-content: center;
+          font-weight: bolder;
+          margin: 10px;
+          margin-top: 20px;
+        ">Student List</h2>
+    <div class="table">
+      <table style="width: 100%">
+        <tr>
+          <th>S.No</th>
+          <th>Roll No.</th>
+          <th>Name</th>
+          <th>Branch</th>
+          <th>Paper Code</th>
+          <th>Take Photo/Biometric</th>
+          <th>Attendence</th>
+        </tr>
+        {% for index,row in list %}
+        <tr>
+          <td>{{index+1}}</td>
+          <form action="/capture_attendance" method="post" class="form">
+          <td><input type="text" name="stroll" value= "{{row["rollno"]}}" readonly ></td>
+          <td><input type="text" name="stname" value= "{{row["name"]}}" readonly ></td>
+          <td>{{row["branch"]}}</td>
+          <td><input type="text" name="papercode" value= "{{row["Papercode"]}}" readonly ></td>
+          <td class="column"><button type="submit">📷</button></td>
+          <td>{{row["attendance"]}}</td>
+          </form>
+        </tr>
+        {% endfor %}
+        <!-- <tr>
+          <td>1</td>
+          <td>21UECC8055</td>
+          <td class="shift">Bhanu Priya Dixit</td>
+          <td>ECC</td>
+          <td>EC 404A</td>
+          <td class="column"><button>📷</button></td>
+          <td>-</td>
+        </tr>
+        <tr>
+          <td>2</td>
+          <td>21UECC8011</td>
+          <td>Chirag Mangal</td>
+          <td>ECC</td>
+          <td>EC 404A</td>
+          <td class="column"><button>📷</button></td>
+          <td>-</td>
+        </tr>
+        <tr>
+          <td>3</td>
+          <td>21UECC8002</td>
+          <td>Abhishek Choudhary</td>
+          <td>ECC</td>
+          <td>EC 404A</td>
+          <td class="column"><button>📷</button></td>
+          <td>-</td>
+        </tr>
+        <tr>
+          <td>4</td>
+          <td>21UECC8006</td>
+          <td>Amit Dubey</td>
+          <td>ECC</td>
+          <td>EC 404A</td>
+          <td class="column"><button>📷</button></td>
+          <td>-</td>
+        </tr>
+        <tr>
+          <td>-</td>
+          <td>-</td>
+          <td>-</td>
+          <td>-</td>
+          <td>-</td>
+          <td class="column"></td>
+          <td>-</td>
+        </tr>
+        <tr>
+          <td>-</td>
+          <td>-</td>
+          <td>-</td>
+          <td>-</td>
+          <td>-</td>
+          <td class="column"></td>
+          <td>-</td>
+        </tr>
+        <tr>
+          <td>-</td>
+          <td>-</td>
+          <td>-</td>
+          <td>-</td>
+          <td>-</td>
+          <td class="column"></td>
+          <td>-</td>
+        </tr> -->
+      </table>
+    </div>
+  </div>
+</body>
+
+</html>

@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Teacher Dashboard</title>
+    <!-- MATERIAL ICONS -->
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp"
+      rel="stylesheet"
+    />
+    <!-- STYLESHEET -->
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <aside>
+        <div class="top">
+          <div class="close" id="close-btn">
+            <span class="material-icons-sharp">close</span>
+          </div>
+        </div>
+        <div class="profile">
+          <div class="profile-photo">
+            <img src="images/IMG20230610132536.jpg" alt="" />
+          </div>
+          <div class="info">
+            <p><b>Abhishek Choudhary</b></p>
+            <small class="text-muted">Admin</small>
+          </div>
+        </div>
+
+        <div class="sidebar">
+          <a href="#" class="active">
+            <span class="material-icons-sharp">grid_view</span>
+            <h3>Dashboard</h3>
+          </a>
+          <a href="StudentList.html">
+            <span class="material-icons-sharp">table_view</span>
+            <h3>Student List</h3>
+          </a>
+          <a
+            onclick="window.location='http://localhost:5000/dropsession'"
+            type="submit"
+          >
+            <span class="material-icons-sharp">logout</span>
+            <h3>Logout</h3>
+          </a>
+        </div>
+      </aside>
+
+      <!-- -------------------END OF ASIDE(left sidebar)----------- -->
+      <main>
+        <div class="mbm_logo">
+          <img
+            style="width: 6.5rem; height: 6.5rem"
+            src="../images/MBM_Logo.png"
+            alt=""
+          />
+          <div>
+            <h2 style="font-size: 25px">
+              MBM UNIVERSITY, JODHPUR
+              <br />
+            </h2>
+            <h2 style="font-size: 25px; margin-left: -25px">
+              एम बी एम विश्वविद्यालय, जोधपुर
+            </h2>
+            <p style="padding-left: 3px">
+              State University Govt. of Rajasthan
+            </p>
+          </div>
+        </div>
+
+        <div class="dabba">
+          <h1 style="font-size: 2.5rem">Details</h1>
+          <div id="teacher-details" class="details-card">
+            <!-- <div class="profile">
+                <div class="teacher-photo">
+                  <img src="images/IMG20230610132536.jpg" alt="" />
+                  <p>Name : <b>Abhishek Choudhary</b></p>
+                </div>
+            </div> -->
+            <div class="details-row">
+              <div class="details-column">
+                <p>
+                  <strong>Designation: </strong>Assistant Professor<span
+                    id=""
+                  ></span>
+                </p>
+                <p><strong>Teacher Id: </strong> <span id="">{{id}}</span></p>
+
+                <p>
+                  <strong>Exam Duration : </strong>J20U74387
+                  <span id="exam-date"></span>
+                </p>
+                <p>
+                  <strong>Venue: </strong>
+                  <span id="exam-time">{{room}} ({{dept}})</span>
+                </p>
+              </div>
+              <div class="details-column">
+                <p><strong>Name: </strong>{{name}}<span id=""></span></p>
+                <p>
+                  <strong>Date:</strong>
+                  <span id="exam-duration"> {{date}} </span>
+                </p>
+                <p>
+                  <strong>Reporting time: </strong>363823
+                  <span id="exam-day"></span>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-------------------- END OF INSIGHTS --------------------->
+      </main>
+      <!-- --------------------END OF MAIN --------------------->
+
+      <div class="right">
+        <div class="top">
+          <button id="menu-btn">
+            <span class="material-icons-sharp">menu</span>
+          </button>
+
+          <div class="theme-toggler">
+            <span class="material-icons-sharp active">light_mode</span>
+            <span class="material-icons-sharp">dark_mode</span>
+          </div>
+        </div>
+        <!-- --------------END OF TOP------------- -->
+      </div>
+    </div>
+
+    <script src="./script.js"></script>
+  </body>
+</html>
